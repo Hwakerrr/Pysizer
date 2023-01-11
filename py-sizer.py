@@ -22,7 +22,7 @@ dirs = os.listdir(cwd)
 #print(dirs)
 
 #basewidth
-basewidth = 800
+basewidth = 1000
 
 #resize function
 def resize():
@@ -34,7 +34,7 @@ def resize():
                     img = Image.open(cwd2 + item)
                     wpercent = (basewidth/float(img.size[0]))
                     hsize = int((float(img.size[1])*float(wpercent)))
-                    rimg = img.resize((basewidth, hsize), Image.ANTIALIAS)
+                    rimg = img.resize((basewidth, hsize), Image.LANCZOS)
                     rimg.save(path2 + name, 'PNG', quality=90)
             except:
                 pass
